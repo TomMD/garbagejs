@@ -7,7 +7,6 @@ on:
 jobs:
   analyze_src:
     name: Source Branch Analysis
-    runs-on: self-hosted
     container:
       image: "musedev/analyst:8b8a911f"
       credentials:
@@ -44,7 +43,6 @@ jobs:
 
   analyze_dst:
     name: Destination Branch Analysis
-    runs-on: self-hosted
     container:
       image: "musedev/analyst:8b8a911f"
       credentials:
@@ -81,7 +79,6 @@ jobs:
   unify_results:
     name: Distill Result
     needs: [analyze_src, analyze_dst]
-    runs-on: self-hosted
     container:
       image: musedev/github-comment-composer
       credentials:
