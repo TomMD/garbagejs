@@ -30,12 +30,7 @@ function run() {
     pip3 install --upgrade semgrep 2>/dev/null 1>/dev/null
     raw_results=$(timeout 10m semgrep --disable-version-check --json --config /opt/semgrep/semgrep-rules.yaml)
     result=$?
-    if [[ $result = 0 ]] ; then
-        emit_results "$raw_results"
-    else
-        printf "Tool timed out!" >&2
-        exit $result
-    fi
+    emit_results "$raw_results"
 }
 
 case "$3" in
