@@ -7,6 +7,7 @@ on:
 jobs:
   analyze_src:
     name: Source Branch Analysis
+    runs-on: ubuntu-20.04
     container:
       image: "musedev/analyst:8b8a911f"
       credentials:
@@ -43,6 +44,7 @@ jobs:
 
   analyze_dst:
     name: Destination Branch Analysis
+    runs-on: ubuntu-20.04
     container:
       image: "musedev/analyst:8b8a911f"
       credentials:
@@ -78,6 +80,7 @@ jobs:
 
   unify_results:
     name: Distill Result
+    runs-on: ubuntu-20.04
     needs: [analyze_src, analyze_dst]
     container:
       image: musedev/github-comment-composer
