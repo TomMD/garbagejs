@@ -9,7 +9,7 @@ jobs:
     name: Source Branch Analysis
     runs-on: self-hosted
     container:
-      image: musedev/analyst
+      image: "musedev/analyst:8b8a911f"
       credentials:
         username: ${{ secrets.MUSE_BOT_USER }}
         password: ${{ secrets.MUSE_BOT_PW }}
@@ -46,7 +46,7 @@ jobs:
     name: Destination Branch Analysis
     runs-on: self-hosted
     container:
-      image: musedev/analyst
+      image: "musedev/analyst:8b8a911f"
       credentials:
         username: ${{ secrets.MUSE_BOT_USER }}
         password: ${{ secrets.MUSE_BOT_PW }}
